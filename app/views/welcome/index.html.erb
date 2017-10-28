@@ -1,0 +1,18 @@
+<h1>Welcome <%= @user.user_name %></h1>
+
+<div>
+    Color: <input class="jscolor" onchange="update(this.jscolor)"  value="cc66ff">
+</div>
+
+<span class='history'>
+  <table class='grid data' id="colorList">
+    <thead>
+    <tr>
+      <th>User name</th>
+      <th>Color</th>
+    </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+</span>

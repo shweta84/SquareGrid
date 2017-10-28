@@ -1,0 +1,11 @@
+.grid { margin:1em auto; border-collapse:collapse }
+.grid td,th {
+  cursor:pointer;
+  width:30px; height:30px;
+  border:1px solid #ccc;
+  text-align:center;
+  font-family:sans-serif; font-size:13px
+}
+
+.history {position: absolute;display: none;}
+.data {width: 150px;}
