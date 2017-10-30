@@ -10,9 +10,11 @@ class WelcomeController < ApplicationController
   end
 
   def save_color
-    data = GridColor.find_or_initialize_by(box_no: params[:box_no], user_id: @user.id)
-    data.attributes = grid_params
-    data.save
+    if params[:updateGrid].eql?('true')
+      data = GridColor.find_or_initialize_by(box_no: params[:box_no], user_id: @user.id)
+      data.attributes = grid_params
+      data.save
+    end
     render json: GridColor.all_colors.where(box_no: params[:box_no])
   end
 

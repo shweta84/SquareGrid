@@ -1,7 +1,9 @@
 <h1>Welcome <%= @user.user_name %></h1>
 
 <div>
-    Color: <input class="jscolor" onchange="update(this.jscolor)"  value="cc66ff">
+  Color: <input class="jscolor" onchange="update(this.jscolor)"  value="cc66ff"><br>
+  <input type="checkbox" name="gridColor" id="gridColor" value="1">
+  <label for='gridColor'>Update Color in the grid</label>
 </div>
 
 <span class='history'>

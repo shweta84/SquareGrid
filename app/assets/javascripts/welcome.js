@@ -1,11 +1,12 @@
 
 var lastColor='#cc66ff';
 var grid = clickableGrid(20,20,function(el,row,col,i){
-  $(el).css('background-color', lastColor);
+  var updateGrid = $('input[type=checkbox]').prop('checked');
+  if (updateGrid) { $(el).css('background-color', lastColor); }
   $.ajax({
     url: '/save_color',
     dataType: 'json',
-    data: {box_no: i, color: lastColor},
+    data: {box_no: i, updateGrid: updateGrid, color: lastColor},
     type: 'POST',
     beforeSend: function(xhr) {
       xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'));
